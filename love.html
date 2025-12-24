@@ -2,103 +2,164 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>给熊诗玉的惊喜</title>
+<title>给熊诗玉</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-    body {
-        margin: 0;
-        height: 100vh;
-        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        font-family: "微软雅黑", sans-serif;
-        overflow: hidden;
-        text-align: center;
-    }
-
-    h1, p {
-        color: #fff;
-        animation: fadeIn 2s ease-in-out;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-
-    p {
-        font-size: 18px;
-        margin-top: 10px;
-    }
-
-    .heart {
-        position: absolute;
-        color: red;
-        animation: float 5s linear infinite;
-    }
-
-    @keyframes float {
-        0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(-800px); opacity: 0; }
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    .final {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        animation: fadeIn 2s ease-in-out;
-    }
-
-    .heart-big {
-        font-size: 100px;
-        margin-top: 20px;
-    }
-
-    .cartoon {
-        font-size: 40px;
-        margin-top: 10px;
-    }
+body{
+    margin:0;
+    overflow:hidden;
+    background: radial-gradient(circle at bottom, #020111, #000);
+    font-family:"微软雅黑",sans-serif;
+    color:#fff;
+}
+#hint{
+    position:absolute;
+    bottom:40px;
+    width:100%;
+    text-align:center;
+    opacity:.8;
+    font-size:16px;
+}
+#text{
+    position:absolute;
+    top:40%;
+    width:100%;
+    text-align:center;
+    font-size:26px;
+    padding:0 20px;
+    animation: fadeIn 1.5s ease;
+}
+.star{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 2s infinite alternate;
+}
+.heart{
+    position:absolute;
+    animation: float 6s linear infinite;
+}
+.firework{
+    position:absolute;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    animation: explode 1s ease-out forwards;
+}
+@keyframes twinkle{
+    from{opacity:.3}
+    to{opacity:1}
+}
+@keyframes float{
+    from{transform:translateY(0);opacity:1}
+    to{transform:translateY(-800px);opacity:0}
+}
+@keyframes explode{
+    to{transform:scale(20);opacity:0}
+}
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+#final{
+    display:none;
+    position:absolute;
+    top:35%;
+    width:100%;
+    text-align:center;
+    animation: fadeIn 2s ease;
+}
+#final .heart-big{
+    font-size:120px;
+    margin-top:20px;
+}
+#final .cartoon{
+    font-size:36px;
+}
 </style>
 </head>
 
 <body>
 
-<h1 id="title">❤️ 熊诗玉 ❤️</h1>
-<p id="text">遇见你，是我最幸运的事</p>
+<div id="text">✨ 轻触屏幕 ✨</div>
+<div id="hint">每点一下，都会更接近我的心</div>
 
-<div class="final" id="final">
+<div id="final">
     <div class="cartoon">🐷 佩奇 & 乔治 🐷</div>
     <div class="heart-big">❤️</div>
 </div>
 
 <script>
-    // 飘爱心
-    function createHeart() {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.bottom = "0px";
-        heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 5000);
-    }
-    const heartTimer = setInterval(createHeart, 300);
+// 星星背景
+for(let i=0;i<100;i++){
+    let s=document.createElement("div");
+    s.className="star";
+    let size=Math.random()*3+1;
+    s.style.width=s.style.height=size+"px";
+    s.style.left=Math.random()*100+"%";
+    s.style.top=Math.random()*100+"%";
+    s.style.animationDuration=Math.random()*3+2+"s";
+    document.body.appendChild(s);
+}
 
-    // 结尾切换画面
-    setTimeout(() => {
-        clearInterval(heartTimer);
-        document.getElementById("title").style.display = "none";
+// 漂浮爱心
+setInterval(()=>{
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"%";
+    h.style.bottom="0";
+    h.style.fontSize=Math.random()*22+14+"px";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+},350);
+
+// 浪漫互动文字（重点）
+const words = [
+    "熊诗玉",
+    "我想认真地告诉你一件事",
+    "在遇见你之前",
+    "我的世界很普通",
+    "可是遇见你之后",
+    "每天都变得值得期待",
+    "你的笑",
+    "你的声音",
+    "你的一切",
+    "都会让我不自觉地开心",
+    "我开始期待",
+    "和你一起的明天",
+    "哪怕只是安静地待着",
+    "我也觉得很幸福",
+    "所以",
+    "我想把这份心意告诉你",
+    "我喜欢你 ❤️"
+];
+
+let index = 0;
+
+document.body.onclick = function(e){
+    if(index < words.length){
+        document.getElementById("text").innerText = words[index++];
+        firework(e.clientX, e.clientY);
+    }else{
         document.getElementById("text").style.display = "none";
-        document.getElementById("final").style.display = "flex";
-    }, 8000);
+        document.getElementById("hint").style.display = "none";
+        document.getElementById("final").style.display = "block";
+    }
+};
+
+// 烟花效果
+function firework(x,y){
+    for(let i=0;i<24;i++){
+        let f=document.createElement("div");
+        f.className="firework";
+        f.style.left=x+"px";
+        f.style.top=y+"px";
+        f.style.background=`hsl(${Math.random()*360},100%,50%)`;
+        document.body.appendChild(f);
+        setTimeout(()=>f.remove(),1000);
+    }
+}
 </script>
 
 </body>
