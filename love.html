@@ -1,166 +1,123 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<title>给熊诗玉</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{
-    margin:0;
-    overflow:hidden;
-    background: radial-gradient(circle at bottom, #020111, #000);
-    font-family:"微软雅黑",sans-serif;
-    color:#fff;
-}
-#hint{
-    position:absolute;
-    bottom:40px;
-    width:100%;
-    text-align:center;
-    opacity:.8;
-    font-size:16px;
-}
-#text{
-    position:absolute;
-    top:40%;
-    width:100%;
-    text-align:center;
-    font-size:26px;
-    padding:0 20px;
-    animation: fadeIn 1.5s ease;
-}
-.star{
-    position:absolute;
-    background:white;
-    border-radius:50%;
-    animation: twinkle 2s infinite alternate;
-}
-.heart{
-    position:absolute;
-    animation: float 6s linear infinite;
-}
-.firework{
-    position:absolute;
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    animation: explode 1s ease-out forwards;
-}
-@keyframes twinkle{
-    from{opacity:.3}
-    to{opacity:1}
-}
-@keyframes float{
-    from{transform:translateY(0);opacity:1}
-    to{transform:translateY(-800px);opacity:0}
-}
-@keyframes explode{
-    to{transform:scale(20);opacity:0}
-}
-@keyframes fadeIn{
-    from{opacity:0}
-    to{opacity:1}
-}
-#final{
-    display:none;
-    position:absolute;
-    top:35%;
-    width:100%;
-    text-align:center;
-    animation: fadeIn 2s ease;
-}
-#final .heart-big{
-    font-size:120px;
-    margin-top:20px;
-}
-#final .cartoon{
-    font-size:36px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年的我，写给最爱的你 ♡</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e8f4ff, #a0d8ef);
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .slideshow {
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            overflow: hidden;
+        }
+        .slide {
+            opacity: 0;
+            animation: fade 24s infinite;
+            position: relative;
+        }
+        .slide:nth-child(1) { animation-delay: 0s; }
+        .slide:nth-child(2) { animation-delay: 4s; }
+        .slide:nth-child(3) { animation-delay: 8s; }
+        .slide:nth-child(4) { animation-delay: 12s; }
+        .slide:nth-child(5) { animation-delay: 16s; }
+        .slide:nth-child(6) { animation-delay: 20s; }
+        .slide:nth-child(7) { animation-delay: 24s; }
+
+        @keyframes fade {
+            0% { opacity: 0; transform: scale(0.95); }
+            8.33% { opacity: 1; transform: scale(1); }
+            25% { opacity: 1; transform: scale(1); }
+            33.33% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 0; }
+        }
+        .slide img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        .caption {
+            font-size: 1.4em;
+            line-height: 1.8;
+            color: #2c7fb8;
+            font-weight: 500;
+            padding: 0 20px;
+            margin: 20px 0 60px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            color: #2c7fb8;
+        }
+        h1 {
+            font-size: 2.6em;
+            margin: 0;
+        }
+        footer {
+            position: fixed;
+            bottom: 20px;
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <h1>2026年的我，写给最爱的你 ♡</h1>
+    </header>
 
-<div id="text">✨ 轻触屏幕 ✨</div>
-<div id="hint">每点一下，都会更接近我的心</div>
+    <div class="slideshow">
+        <div class="slide">
+            <img src="https://youke2.picui.cn/s1/2025/12/26/694df47462203.jpg" alt="蓝色花束">
+            <div class="caption">你送我的蓝色妖姬，像天空一样温柔，从此我的世界只开这一种颜色。</div>
+        </div>
 
-<div id="final">
-    <div class="cartoon">🐷 佩奇 & 乔治 🐷</div>
-    <div class="heart-big">❤️</div>
-</div>
+        <div class="slide">
+            <img src="https://youke2.picui.cn/s1/2025/12/26/694df46f96495.jpg" alt="比耶牵手">
+            <div class="caption">十指相扣，比出全世界最幸福的yeah，因为赢家永远是我们。</div>
+        </div>
 
-<script>
-// 星星背景
-for(let i=0;i<100;i++){
-    let s=document.createElement("div");
-    s.className="star";
-    let size=Math.random()*3+1;
-    s.style.width=s.style.height=size+"px";
-    s.style.left=Math.random()*100+"%";
-    s.style.top=Math.random()*100+"%";
-    s.style.animationDuration=Math.random()*3+2+"s";
-    document.body.appendChild(s);
-}
+        <div class="slide">
+            <img src="https://youke2.picui.cn/s1/2025/12/26/694df8b4caebd.jpg" alt="电影院周年纪念">
+            <div class="caption">又一年，和你一起看《疯狂动物城》，原来最疯狂的不是动物，是我爱你的心。</div>
+        </div>
 
-// 漂浮爱心
-setInterval(()=>{
-    let h=document.createElement("div");
-    h.className="heart";
-    h.innerHTML="❤️";
-    h.style.left=Math.random()*100+"%";
-    h.style.bottom="0";
-    h.style.fontSize=Math.random()*22+14+"px";
-    document.body.appendChild(h);
-    setTimeout(()=>h.remove(),6000);
-},350);
+        <div class="slide">
+            <img src="https://youke2.picui.cn/s1/2025/12/26/694df93da6865.jpg" alt="动漫自拍">
+            <div class="caption">如果我们是二次元情侣，我一定每天都给你画最甜的自拍背景。</div>
+        </div>
 
-// 浪漫互动文字（重点）
-const words = [
-    "熊诗玉",
-    "我想认真地告诉你一件事",
-    "在遇见你之前",
-    "我的世界很普通",
-    "可是遇见你之后",
-    "每天都变得值得期待",
-    "你的笑",
-    "你的声音",
-    "你的一切",
-    "都会让我不自觉地开心",
-    "我开始期待",
-    "和你一起的明天",
-    "哪怕只是安静地待着",
-    "我也觉得很幸福",
-    "所以",
-    "我想把这份心意告诉你",
-    "我喜欢你 ❤️"
-];
+        <div class="slide">
+            <img src="https://youke2.picui.cn/s1/2025/12/26/694df93cc208a.jpg" alt="动漫合照">
+            <div class="caption">漫画里的我们，也在认真地相爱着呢。</div>
+        </div>
 
-let index = 0;
+        <div class="slide">
+            <img src="https://youke2.picui.cn/s1/2025/12/26/694df93f7e0c9.jpg" alt="手放在胸口">
+            <div class="caption">把你的手放在我心口，它只为你跳得这么快，这么稳。</div>
+        </div>
 
-document.body.onclick = function(e){
-    if(index < words.length){
-        document.getElementById("text").innerText = words[index++];
-        firework(e.clientX, e.clientY);
-    }else{
-        document.getElementById("text").style.display = "none";
-        document.getElementById("hint").style.display = "none";
-        document.getElementById("final").style.display = "block";
-    }
-};
+        <div class="slide">
+            <img src="https://youke2.picui.cn/s1/2025/12/26/694df93e911b6.jpg" alt="比心">
+            <div class="caption">比心不是姿势，是我每时每刻都在对你说：我爱你。</div>
+        </div>
+    </div>
 
-// 烟花效果
-function firework(x,y){
-    for(let i=0;i<24;i++){
-        let f=document.createElement("div");
-        f.className="firework";
-        f.style.left=x+"px";
-        f.style.top=y+"px";
-        f.style.background=`hsl(${Math.random()*360},100%,50%)`;
-        document.body.appendChild(f);
-        setTimeout(()=>f.remove(),1000);
-    }
-}
-</script>
-
+    <footer>
+        To my forever love ♡ | 2026
+    </footer>
 </body>
 </html>
